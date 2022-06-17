@@ -1,6 +1,7 @@
 const API = "data/api.json",
   subscription = document.querySelector(".subscription"),
   download = document.querySelector(".download");
+  width_device = window.screen.width;
 
 const sendRequest = (method, url) => {
   return new Promise((resolve, reject) => {
@@ -44,7 +45,7 @@ const createCard = (arg) => {
 
   Array.from(buttons).forEach((item) =>
     item.addEventListener("click", function () {
-      checkBrowser();
+      width_device >= 820 ? checkBrowser() : null
     })
   );
 };
